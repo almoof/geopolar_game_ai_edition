@@ -1,18 +1,69 @@
 [gd_scene format=3 uid="uid://b5ikk3akf05u8"]
 
-[ext_resource type="Texture2D" uid="uid://cv4uh4wo5jm5m" path="res://sprites/player.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://blghkc1uitnc7" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dj11b77ec5vyy" path="res://sprites/16x32 All Animations-Sheet.png" id="2_g2els"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
-radius = 9.055386
+radius = 8.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_g2els"]
+
+[sub_resource type="Animation" id="Animation_g2els"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "idle_down"
+length = 1.925
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dqkch"]
+_data = {
+&"RESET": SubResource("Animation_g2els"),
+&"idle_down": SubResource("Animation_qhqgy")
+}
 
 [node name="Player" type="CharacterBody2D" unique_id=988240165]
 script = ExtResource("1_g2els")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242557069]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_4flbx")
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_g2els")
+hframes = 123
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818926844]
-position = Vector2(0, -5)
+position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_onrkg")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1559789531]
+root_node = NodePath(".")
+tree_root = SubResource("AnimationNodeStateMachine_g2els")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1064750646]
+root_node = NodePath("../AnimationTree")
+libraries/ = SubResource("AnimationLibrary_dqkch")
