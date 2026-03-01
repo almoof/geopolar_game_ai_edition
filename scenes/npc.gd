@@ -10,6 +10,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if isInArea and event.is_action_pressed("interact"):
 		print("youu")
+		$"../Dialogue".start()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
@@ -18,3 +19,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		isInArea = false
+
+
+func _on_dialogue_dialogue_finished() -> void:
+	print("finished")

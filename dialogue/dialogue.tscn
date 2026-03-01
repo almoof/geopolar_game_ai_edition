@@ -1,33 +1,38 @@
 [gd_scene format=3 uid="uid://cjf7qatukqkv3"]
 
 [ext_resource type="Texture2D" uid="uid://boklrxj2wmxrm" path="res://sprites/Border All 1.png" id="1_k0ki1"]
+[ext_resource type="Script" uid="uid://b4k4hpgbnfwry" path="res://dialogue/dialogue.gd" id="1_vigd0"]
 
 [node name="Dialogue" type="Control" unique_id=773974450]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 62.0
+offset_bottom = 55.0
+script = ExtResource("1_vigd0")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=943453980]
 layout_mode = 0
-offset_right = 158.0
-offset_bottom = 122.0
+offset_right = 89.0
+offset_bottom = 68.0
 texture = ExtResource("1_k0ki1")
 region_rect = Rect2(0, -0.09308624, 64.52618, 64.49087)
 
 [node name="Name" type="RichTextLabel" parent="NinePatchRect" unique_id=1389724513]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 10.0
-offset_right = 82.0
-offset_bottom = 44.0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 112.50877
+offset_bottom = 49.85965
+scale = Vector2(0.35, 0.35)
+theme_override_font_sizes/normal_font_size = 26
 text = "Name:"
 
 [node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=1427444755]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 29.0
-offset_right = 138.0
-offset_bottom = 108.0
-theme_override_font_sizes/normal_font_size = 12
+offset_left = 9.0
+offset_top = 17.0
+offset_right = 329.93024
+offset_bottom = 217.00003
+scale = Vector2(0.215, 0.215)
+theme_override_font_sizes/normal_font_size = 27
 text = "Text....."

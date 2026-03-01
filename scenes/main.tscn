@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://330s2cmkbgjh" path="res://sprites/Grass.png" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b5ikk3akf05u8" path="res://scenes/player.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dgoqdkbhu35qo" path="res://scenes/npc.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cjf7qatukqkv3" path="res://dialogue/dialogue.tscn" id="4_jyhfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_0wfyh")
@@ -31,3 +32,11 @@ position = Vector2(421, 195)
 
 [node name="NPC" parent="." unique_id=1598529223 instance=ExtResource("3_sugp2")]
 position = Vector2(476, 194)
+
+[node name="Dialogue" parent="." unique_id=773974450 instance=ExtResource("4_jyhfs")]
+offset_left = 433.0
+offset_top = 115.0
+offset_right = 473.0
+offset_bottom = 155.0
+
+[connection signal="dialogue_finished" from="Dialogue" to="NPC" method="_on_dialogue_dialogue_finished"]
