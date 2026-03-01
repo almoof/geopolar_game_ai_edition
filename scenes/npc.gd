@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if isInArea and event.is_action_pressed("interact"):
-		print("youu")
+		#print("youu")
 		$"../Dialogue".start()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

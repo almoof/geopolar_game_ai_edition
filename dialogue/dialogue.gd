@@ -37,3 +37,4 @@ func next_script():
 	else:
 		$NinePatchRect/Name.text = dialogue[id]['name']
 		$NinePatchRect/Text.text = dialogue[id]['text']
+	print(id)
