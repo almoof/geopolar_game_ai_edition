@@ -53,7 +53,7 @@ func player_animation() -> void:
 		player.play("walk_up")
 	elif movement_dir == "down" and is_moving == true:
 		player.play("walk_down")
-		
+
 	elif movement_dir == "upleft" and is_moving == true:
 		player.play("walk_upside")
 		player.flip_h = true
