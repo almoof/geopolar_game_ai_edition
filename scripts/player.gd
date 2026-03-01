@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	player_movement()
 	movement_direction()
 	player_animation()
-	print(input_dir)
+	#print(input_dir)
 
 func player_movement() -> void:
 	input_dir = Input.get_vector("left", "right", "up", "down")

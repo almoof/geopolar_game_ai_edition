@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dgoqdkbhu35qo"]
 
+[ext_resource type="Script" uid="uid://dcej4pi07ery8" path="res://scenes/npc.gd" id="1_abqhh"]
 [ext_resource type="Texture2D" uid="uid://dj11b77ec5vyy" path="res://sprites/16x32 All Animations-Sheet.png" id="1_nh2m4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abqhh"]
@@ -45,6 +46,7 @@ radius = 5.0
 radius = 28.0
 
 [node name="NPC" type="CharacterBody2D" unique_id=1598529223]
+script = ExtResource("1_abqhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1589253015]
 sprite_frames = SubResource("SpriteFrames_tl2vt")
@@ -61,3 +63,6 @@ shape = SubResource("CircleShape2D_hwkja")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=400509892]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_0tygy")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
