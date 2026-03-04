@@ -5,7 +5,8 @@
 [node name="Battle" type="Node2D" unique_id=601672420]
 
 [node name="Card" parent="." unique_id=466352235 instance=ExtResource("1_dn72j")]
-position = Vector2(468, 307)
+position = Vector2(537, 418)
+scale = Vector2(0.5833254, 0.5833254)
 
 [node name="Button" type="Button" parent="." unique_id=183079983]
 offset_left = 686.0

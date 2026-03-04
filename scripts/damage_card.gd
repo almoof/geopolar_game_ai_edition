@@ -26,6 +26,7 @@ func _on_button_pressed() -> void:
 		hp -= damage
 		$"../HP text".text = str(hp)
 		isSelected = false
+		position.y += 10
 	else:
 		print("select a card")
 		
