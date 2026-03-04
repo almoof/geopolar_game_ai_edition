@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjf7qatukqkv3"]
 
 [ext_resource type="Texture2D" uid="uid://boklrxj2wmxrm" path="res://sprites/Border All 1.png" id="1_k0ki1"]
-[ext_resource type="Script" uid="uid://b4k4hpgbnfwry" path="res://dialogue/dialogue.gd" id="1_vigd0"]
+[ext_resource type="Script" uid="uid://b4k4hpgbnfwry" path="res://scripts/dialogue.gd" id="1_vigd0"]
 
 [node name="Dialogue" type="Control" unique_id=773974450]
 layout_mode = 3
