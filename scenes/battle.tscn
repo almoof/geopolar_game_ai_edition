@@ -6,3 +6,20 @@
 
 [node name="Card" parent="." unique_id=466352235 instance=ExtResource("1_dn72j")]
 position = Vector2(468, 307)
+
+[node name="Button" type="Button" parent="." unique_id=183079983]
+offset_left = 686.0
+offset_top = 457.0
+offset_right = 814.0
+offset_bottom = 533.0
+text = "Сыграть карту"
+
+[node name="HP text" type="Label" parent="." unique_id=1999227120]
+offset_left = 886.0
+offset_top = 32.0
+offset_right = 1019.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 53
+text = "HP"
+
+[connection signal="pressed" from="Button" to="Card" method="_on_button_pressed"]
