@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://bmvtobvlvrdvt"]
 
+[ext_resource type="PackedScene" uid="uid://dndkq5i1tr368" path="res://scenes/damage_card.tscn" id="1_dn72j"]
+
 [node name="Battle" type="Node2D" unique_id=601672420]
+
+[node name="Card" parent="." unique_id=466352235 instance=ExtResource("1_dn72j")]
+position = Vector2(468, 307)

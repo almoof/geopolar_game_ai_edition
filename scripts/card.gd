@@ -1,4 +1,4 @@
-class_name Card extends Node
+class_name Card extends Node2D
 
 var damage: int
 var isSelected: bool
