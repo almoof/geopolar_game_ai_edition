@@ -1,11 +1,20 @@
 [gd_scene format=3 uid="uid://bmvtobvlvrdvt"]
 
 [ext_resource type="PackedScene" uid="uid://dndkq5i1tr368" path="res://scenes/damage_card.tscn" id="1_dn72j"]
+[ext_resource type="Script" uid="uid://cobnyy4ua2c68" path="res://scenes/logic.gd" id="2_th188"]
 
 [node name="Battle" type="Node2D" unique_id=601672420]
 
 [node name="Card" parent="." unique_id=466352235 instance=ExtResource("1_dn72j")]
 position = Vector2(537, 418)
+scale = Vector2(0.5833254, 0.5833254)
+
+[node name="Card2" parent="." unique_id=1528317112 instance=ExtResource("1_dn72j")]
+position = Vector2(131, 414)
+scale = Vector2(0.5833254, 0.5833254)
+
+[node name="Card3" parent="." unique_id=409580801 instance=ExtResource("1_dn72j")]
+position = Vector2(330, 415)
 scale = Vector2(0.5833254, 0.5833254)
 
 [node name="Button" type="Button" parent="." unique_id=183079983]
@@ -23,4 +32,7 @@ offset_bottom = 103.0
 theme_override_font_sizes/font_size = 53
 text = "HP"
 
-[connection signal="pressed" from="Button" to="Card" method="_on_button_pressed"]
+[node name="Logic" type="Node" parent="." unique_id=1561773071]
+script = ExtResource("2_th188")
+
+[connection signal="pressed" from="Button" to="Logic" method="_on_button_pressed"]
