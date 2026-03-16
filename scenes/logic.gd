@@ -1,6 +1,8 @@
 extends Node
 
 var hp = 100
+var damage = 0
+var susceptivity = 1
 var cards_to_play: Array[String] = []
 
 func _ready() -> void:
@@ -30,11 +32,17 @@ func _on_button_pressed() -> void:
 func check_id(card: Card) -> String:
 	match card.id:
 		0: return "damage_card"
+		1: return "pine_card"
 		_: return "none"
 		
 func play_cards() -> void:
 	for card in cards_to_play:
 		if card == "damage_card":
-			hp -= 3
-			$"../HP text".text = str(hp)
+			damage += 3
+		if card == "pine_card":
+			susceptivity = 2
+	hp -= damage * susceptivity
+	$"../HP text".text = str(hp)
+	damage = 0
+	susceptivity = 1
 	cards_to_play.clear()
