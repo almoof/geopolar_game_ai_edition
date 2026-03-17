@@ -1,5 +1,7 @@
 extends Card
 
+class_name Damage_Card
+
 func _ready() -> void:
 	damage = 3
 	isSelected = false

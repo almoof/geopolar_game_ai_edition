@@ -7,22 +7,25 @@
 [node name="Battle" type="Node2D" unique_id=601672420]
 
 [node name="Card" parent="." unique_id=466352235 instance=ExtResource("1_dn72j")]
+visible = false
 position = Vector2(110.000015, 437.00003)
 scale = Vector2(0.5833254, 0.5833254)
 
 [node name="Card2" parent="." unique_id=1528317112 instance=ExtResource("1_dn72j")]
+visible = false
 position = Vector2(312, 435.00003)
 scale = Vector2(0.5833254, 0.5833254)
 
 [node name="Card3" parent="." unique_id=39079232 instance=ExtResource("2_p1qf1")]
+visible = false
 position = Vector2(515.00006, 434)
 scale = Vector2(0.583, 0.583)
 
 [node name="Button" type="Button" parent="." unique_id=183079983]
-offset_left = 686.0
-offset_top = 457.0
-offset_right = 814.0
-offset_bottom = 533.0
+offset_left = 893.0
+offset_top = 166.0
+offset_right = 1021.0
+offset_bottom = 242.0
 text = "Сыграть карту"
 
 [node name="HP text" type="Label" parent="." unique_id=1999227120]

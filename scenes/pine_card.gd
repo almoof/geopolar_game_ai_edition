@@ -1,5 +1,7 @@
 extends Card
 
+class_name Pine_Card
+
 func _ready() -> void:
 	damage = 0
 	isSelected = false
