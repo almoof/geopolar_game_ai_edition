@@ -7,6 +7,7 @@ func _ready() -> void:
 	isSelected = false
 	rarity = Type.RARE
 	id = 1
+	exponent = 1
 	
 
 

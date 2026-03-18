@@ -13,10 +13,10 @@ metadata/_custom_type_script = "uid://bjxwq0rltyv1m"
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=947177638]
 texture = ExtResource("2_2cerl")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1175056746]
+[node name="Area2D" type="Area2D" parent="." unique_id=1175056746]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=793766968]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=793766968]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_41uhx")
 
-[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

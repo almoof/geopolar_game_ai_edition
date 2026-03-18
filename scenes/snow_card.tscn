@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://tgby70hk0dbx"]
+
+[ext_resource type="Script" uid="uid://be5vj1233gc7p" path="res://snow_card.gd" id="1_hro2g"]
+[ext_resource type="Texture2D" uid="uid://c4v1ux6swhych" path="res://sprites/snow_card.png" id="2_oa23u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kori8"]
+size = Vector2(298, 417)
+
+[node name="Card" type="Node2D" unique_id=1999075862]
+script = ExtResource("1_hro2g")
+metadata/_custom_type_script = "uid://bjxwq0rltyv1m"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=498160209]
+texture = ExtResource("2_oa23u")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1315095500]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=534788062]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kori8")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

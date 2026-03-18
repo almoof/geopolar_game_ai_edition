@@ -7,6 +7,7 @@ func _ready() -> void:
 	isSelected = false
 	rarity = Type.DEFAULT
 	id = 0
+	exponent = 1
 	
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

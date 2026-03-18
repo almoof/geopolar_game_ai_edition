@@ -3,13 +3,15 @@ extends Node
 var hp = 100
 var damage = 0
 var susceptivity = 1
+var exponent = 1
 var cards_to_play: Array[String] = []
 var slots: Array[String] = []
 var slots_inst: Array[Card] = []
 var damageCardScene = preload("res://scenes/damage_card.tscn")
 var pineCardScene = preload("res://scenes/pine_card.tscn")
+var snowCardScene = preload("res://scenes/snow_card.tscn")
 
-var deck: Array[String] = ["damage_card", "damage_card", "damage_card", "damage_card", "pine_card", "pine_card"]
+var deck: Array[String] = ["damage_card", "damage_card", "damage_card", "damage_card", "pine_card", "pine_card", "snow_card"]
 var discard_deck: Array[String] = []
 var slots_num = 4
 
@@ -50,6 +52,13 @@ func instantiate_slots() -> void:
 				cardInstance.scale = Vector2(0.583, 0.583)
 				slots_inst.append(cardInstance)
 				#print("2")
+			"snow_card":
+				var cardInstance = snowCardScene.instantiate() as Snow_Card
+				add_child(cardInstance)
+				cardInstance.global_position = Vector2((i+1)*200, 430)
+				cardInstance.scale = Vector2(0.583, 0.583)
+				slots_inst.append(cardInstance)
+				#print("3")
 	#print("array -", slots_inst)
 func _on_button_pressed() -> void:
 	#print("bylo ->", slots_inst)
@@ -86,6 +95,7 @@ func check_id(card: Card) -> String:
 	match card.id:
 		0: return "damage_card"
 		1: return "pine_card"
+		2: return "snow_card"
 		_: return "none"
 		
 func play_cards() -> void:
@@ -94,9 +104,12 @@ func play_cards() -> void:
 			damage += 3
 		if card == "pine_card":
 			susceptivity *= 2
-	hp -= damage * susceptivity
+		if card == "snow_card":
+			exponent *= 2
+	hp -= (damage * susceptivity) ** exponent
 	$"../HP text".text = str(hp)
 	$"../Deck size".text = str(deck.size())
 	damage = 0
 	susceptivity = 1
+	exponent = 1
 	#cards_to_play.clear()
