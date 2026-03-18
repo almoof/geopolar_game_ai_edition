@@ -36,6 +36,14 @@ offset_bottom = 103.0
 theme_override_font_sizes/font_size = 53
 text = "HP"
 
+[node name="Deck size" type="Label" parent="." unique_id=9834739]
+offset_left = 155.0
+offset_top = 43.0
+offset_right = 288.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 53
+text = "deck size"
+
 [node name="Logic" type="Node" parent="." unique_id=1561773071]
 script = ExtResource("2_th188")
 
